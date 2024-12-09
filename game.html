@@ -7,52 +7,8 @@
     <meta name="description" content="This is the Game Page">
     <title>Game</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-        }
-
-        canvas {
-            border: 1px solid #d3d3d3;
-            background-color: #f1f1f1;
-        }
-
-        #game {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url('images/my-background.jpg');
-            background-size: cover;
-            min-height: 400px;
-        }
-
-        .game-controls {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .myButton {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #2e3847;
-            color: black;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .myButton:hover {
-            background-color: white;
-            color: #2e3847;
-        }
-    </style>
 </head>
 
 <body onload="startGame()">
@@ -60,14 +16,12 @@
         <img src="images/logo.png" alt="logo" class="img-fluid logo">
     </header>
 
-
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="game.html">Game</a></li>
             <li><a href="contact.html">Contact</a></li>
-
         </ul>
     </nav>
     <main>
@@ -77,8 +31,13 @@
         </p>
 
         <div id="game"></div>
-        <div class="game-controls">
-            <button class="myButton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
+        <div class="game-controls desktop">
+            <button class="myButton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">FLAP WINGS</button>
+            <button class="myButton" onclick="resetGame()">PLAY AGAIN</button>
+        </div>
+
+        <div class="game-controls mobile">
+            <button class="myButton" ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)">FLAP WINGS</button>
             <button class="myButton" onclick="resetGame()">PLAY AGAIN</button>
         </div>
 
@@ -88,27 +47,33 @@
             var myScore;
 
             function startGame() {
-                myGamePiece = new component(30, 30, "#2e3847", 10, 120); // Game piece color matches nav background
-                myGamePiece.gravity = 0.05; // Reduced gravity for slower fall
-                myScore = new component("30px", "Consolas", "black", 420, 40, "text"); // Score color matches link color
-                myGameArea.start();
+                var canvasWidth = 640;
+                var canvasHeight = 360;
+                if (window.innerWidth < 768) {
+                    canvasWidth = 300;
+                    canvasHeight = 300;
+                }
+                myGamePiece = new component(30, 30, "#bb8243", 10, 120);
+                myGamePiece.gravity = 0.5;
+                myScore = new component("30px", "Consolas", "black", 420, 40, "text");
+                myGameArea.start(canvasWidth, canvasHeight);
             }
 
             var myGameArea = {
                 canvas: document.createElement("canvas"),
-                start: function () {
-                    this.canvas.width = 640;
-                    this.canvas.height = 360;
+                start: function (canvasWidth, canvasHeight) {
+                    this.canvas.width = canvasWidth;
+                    this.canvas.height = canvasHeight;
                     this.context = this.canvas.getContext("2d");
                     var myGame = document.getElementById("game");
                     myGame.insertBefore(this.canvas, myGame.childNodes[0]);
                     this.frameNo = 0;
-                    this.interval = setInterval(updateGameArea, 25); // Slower game speed by increasing interval
+                    this.interval = setInterval(updateGameArea, 25);
                 },
                 clear: function () {
                     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
                 }
-            }
+            };
 
             function component(width, height, color, x, y, type) {
                 this.type = type;
@@ -131,20 +96,20 @@
                         ctx.fillStyle = color;
                         ctx.fillRect(this.x, this.y, this.width, this.height);
                     }
-                }
+                };
                 this.newPos = function () {
                     this.gravitySpeed += this.gravity;
                     this.x += this.speedX;
                     this.y += this.speedY + this.gravitySpeed;
                     this.hitBottom();
-                }
+                };
                 this.hitBottom = function () {
                     var rockbottom = myGameArea.canvas.height - this.height;
                     if (this.y > rockbottom) {
                         this.y = rockbottom;
                         this.gravitySpeed = 0;
                     }
-                }
+                };
                 this.crashWith = function (otherobj) {
                     var myleft = this.x;
                     var myright = this.x + (this.width);
@@ -159,7 +124,7 @@
                         crash = false;
                     }
                     return crash;
-                }
+                };
             }
 
             function updateGameArea() {
@@ -179,8 +144,8 @@
                     minGap = 50;
                     maxGap = 200;
                     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-                    myObstacles.push(new component(20, height, "#2e3847", x, 0)); // Obstacle color matches nav background
-                    myObstacles.push(new component(20, x - height - gap, "#2e3847", x, height + gap));
+                    myObstacles.push(new component(20, height, "#bb8243", x, 0));
+                    myObstacles.push(new component(20, x - height - gap, "#bb8243", x, height + gap));
                 }
                 for (i = 0; i < myObstacles.length; i += 1) {
                     myObstacles[i].x += -1;
@@ -193,7 +158,9 @@
             }
 
             function everyinterval(n) {
-                if ((myGameArea.frameNo / n) % 1 == 0) { return true; }
+                if ((myGameArea.frameNo / n) % 1 === 0) {
+                    return true;
+                }
                 return false;
             }
 
@@ -209,43 +176,5 @@
             }
         </script>
     </main>
-
-    <footer>
-        <div class="footer-upper py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h5>CSCI1450 Final Project</h5>
-                        <p>
-                            This is a portfolio website made for my final CSCI1450 assignment.
-                            The images are royalty-free photos from pixabay.com.
-                        </p>
-                    </div>
-                    <div class="col-sm-6">
-                        <h5>Connect with me!</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="https://www.linkedin.com/in/jakeburoker/" class="text-light"><i
-                                        class="fa-brands fa-linkedin"></i> Linkedin</a></li>
-                            <li><a href="https://github.com/JakeBuroker" class="text-light"><i
-                                        class="fa-brands fa-github"></i> Github</a></li>
-                            <li><a href="mailto:jaketburoker@gmail.com" class="text-light"><i
-                                        class="fa-solid fa-envelope"></i> Email</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-lower text-center py-2">
-            <small>&copy; Jake Buroker</small>
-        </div>
-    </footer>
-
-    <!--jQuery, Popper, and Bootstrap Javascript files-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>

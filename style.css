@@ -45,7 +45,7 @@ header {
 }
 
 nav {
-
+  
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   padding: 5px;
@@ -70,11 +70,11 @@ nav a {
 }
 
 nav a:link {
-  color: black;
+  color: rgb(79, 29, 29);
 }
 
 nav a:visited {
-  color: black;
+  color: rgb(189, 189, 189);
 }
 
 nav a:hover {
@@ -132,7 +132,29 @@ footer .footer-upper a:hover {
   color: #bb8243;
 }
 
+.contact-section {
+  padding: 50px 25px;
+  border-top: 3px solid #2a2d34;
+  border-bottom: 3px solid #2a2d34;
+}
 
+.contact-section h1 {
+  font-size: 2.5em;
+  color: #bb8243;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+}
+
+iframe {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 /*CSS without a media query--applies to all sizes unless overridden*/
 h1 {
@@ -154,6 +176,20 @@ h1 {
   padding: 50px;
   background-image: url('images/banner.jpg');
 
+}
+
+/* JavaScript Game changes for mobile */
+.mobile{
+	display:none;
+}
+@media only screen and (max-width: 768px){
+	.desktop{
+		display:none;
+	}
+	.mobile{
+		display: block;
+		touch-action: manipulation;
+	}
 }
 
 /* CSS Adjustments for Tablets */
