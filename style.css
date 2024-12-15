@@ -1,4 +1,4 @@
-/* General Reset */
+/* General */
 * {
   margin: 0;
   padding: 0;
@@ -47,14 +47,17 @@ nav a {
   text-decoration: none;
 }
 
-nav a:link, nav a:visited {
+nav a:link,
+nav a:visited {
   color: rgb(189, 189, 189);
 }
 
-nav a:hover, nav a:active {
+nav a:hover,
+nav a:active {
   color: #bb8243;
 }
 
+/* Main */
 main {
   max-width: 1000px;
   margin: 20px auto;
@@ -62,14 +65,14 @@ main {
 }
 
 .resume-container {
-  background-color: #fff;
+  background-color: #ddd;
   width: 8.5in;
   min-height: 11in;
   padding: 40px;
   margin: 40px auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #fff;
 }
 
 h1 {
@@ -178,6 +181,7 @@ iframe {
   margin: 0 0 10px 0;
   padding: 50px;
   background-image: url('images/banner.jpg');
+  ;
 }
 
 .code {
@@ -193,7 +197,7 @@ iframe {
 /* JavaScript Game changes for mobile */
 .mobile {
   display: none;
-  
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -231,7 +235,8 @@ iframe {
     border: none;
   }
 
-  nav, footer {
+  nav,
+  footer {
     display: none;
   }
 

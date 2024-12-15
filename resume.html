@@ -23,7 +23,6 @@
         .logo {
             margin: 0 auto;
             display: block;
-            width: auto;
         }
 
         nav {
@@ -35,10 +34,11 @@
         }
 
         nav ul {
-            list-style-type: none;
-            text-align: center;
-        }
-
+  list-style-type: none;
+  text-align: center;
+  margin: 8px 0;
+  padding: 0;
+}
         nav li {
             display: inline;
             padding: 5px;
@@ -129,7 +129,10 @@
         }
 
         @media print {
-            nav, footer, header {
+
+            nav,
+            footer,
+            header {
                 display: none;
             }
 
@@ -143,11 +146,11 @@
 </head>
 
 <body>
-
     <header>
         <img src="images/logo.png" alt="logo" class="img-fluid logo">
     </header>
 
+    <!--nav-->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -158,99 +161,92 @@
     </nav>
 
     <main>
-        <div class="resume-container">
-            <h1>Jake Buroker</h1>
-            <p class="contact-info">
-                📧 <a href="mailto:JakeTBuroker@gmail.com" onclick="alert('You can email me at JakeTBuroker@gmail.com!')">JakeTBuroker@gmail.com</a> 
-                ❖ 
-                📞 <a href="tel:+16513289798" onclick="alert('You can call or text me at (651) 328-9798!')">(651) 328-9798</a> 
-                ❖ 
-                <a href="https://github.com/JakeBuroker" target="_blank">GitHub</a>
-            </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="resume-container">
+                        <h1>Jake Buroker</h1>
+                        <p class="contact-info">
+                            📧 <a href="mailto:JakeTBuroker@gmail.com" onclick="alert('You can email me at JakeTBuroker@gmail.com!')">JakeTBuroker@gmail.com</a> ❖ 📞 <a href="tel:+16513289798" onclick="alert('You can call or text me at (651) 328-9798!')">(651) 328-9798</a> ❖ <a href="https://github.com/JakeBuroker" target="_blank">GitHub</a>
+                        </p>
 
-            <div class="resume-buttons">
-                <a href="images/Resume.pdf" class="btn-download"><i class="fa-solid fa-download"></i> Download PDF</a>
+                        <div class="resume-buttons">
+                            <a href="images/Resume.pdf" class="btn-download"><i class="fa-solid fa-download"></i> Download PDF</a>
+                        </div>
+
+                        <h2><i class="fa-solid fa-briefcase"></i> EXPERIENCE</h2>
+                        <h3>TRACES</h3>
+                        <p><strong>July 2024 - Nov. 2024</strong><br>Software Engineer<br><a href="https://traces.website" target="_blank">Traces.Website</a></p>
+                        <ul>
+                            <li>Developed an evidence management mobile web app for an immersive play with The Walker Art Center.</li>
+                            <li>Took a leadership role managing the repository and overseeing all DevOps tasks using Heroku, AWS, Render, and Cloudflare for security and custom domain deployment.</li>
+                        </ul>
+
+                        <h3>Prime Digital Academy</h3>
+                        <p><strong>Oct. 2023 - Mar. 2024</strong><br>Software Engineering Student</p>
+                        <ul>
+                            <li>Developed a pick-up order placer for my mom’s restaurant that allows customers to place pick-up orders, view order history, and provides admins with tools to manage and analyze orders.</li>
+                        </ul>
+
+                        <h3>Allied Universal/American Security LLC</h3>
+                        <p><strong>May 2021 - Sep. 2023</strong><br>Security Officer</p>
+                        <ul>
+                            <li>Officer at Target Field for MLB seasons and concerts, ensuring crowd control for 39,000 attendees.</li>
+                        </ul>
+
+                        <h3>Cobblestone Cafe</h3>
+                        <p><strong>Jan. 2017 - May 2023</strong><br>Kitchen Supervisor</p>
+                        <ul>
+                            <li>Supervised a high-volume kitchen, managing orders with attention to detail and quality.</li>
+                        </ul>
+
+                        <h2><i class="fa-solid fa-graduation-cap"></i> EDUCATION</h2>
+                        <p><strong>Saint Paul College</strong><br>Expected 2026<br>AAS in Computer Programming</p>
+                        <p><strong>Prime Digital Academy</strong><br>2024<br>Full-stack software development</p>
+
+                        <h2><i class="fa-solid fa-laptop-code"></i> SKILLS</h2>
+                        <ul>
+                            <li>Languages: Working knowledge of HTML, CSS, JavaScript, SQL, Python, C, C#, and Java</li>
+                            <li>Technologies: Hands-on experience with React, Node.js, Express, Axios, Redux, PostgreSQL, Material UI, Stripe, Passport, AWS, Heroku, Cloudflare, Render, .NET Framework</li>
+                            <li>Software Development Lifecycle: Scoping, development, testing, and deployment</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <h2><i class="fa-solid fa-briefcase"></i> EXPERIENCE</h2>
-
-            <h3>TRACES</h3>
-            <p><strong>July 2024 - Nov. 2024</strong><br>Software Engineer<br><a href="https://traces.website" target="_blank">Traces.Website</a></p>
-            <ul>
-                <li>Developed an evidence management mobile web app for an immersive play with The Walker Art Center.</li>
-                <li>Took a leadership role managing the repository and overseeing all DevOps tasks using Heroku, AWS,
-                    Render, and Cloudflare for security and custom domain deployment.</li>
-            </ul>
-
-            <h3>Prime Digital Academy</h3>
-            <p><strong>Oct. 2023 - Mar. 2024</strong><br>Software Engineering Student</p>
-            <ul>
-                <li>Developed a pick-up order placer for my mom’s restaurant that allows customers to place pick-up orders,
-                    view order history, and provides admins with tools to manage and analyze orders</li>
-            </ul>
-
-            <h3>Allied Universal/American Security LLC</h3>
-            <p><strong>May 2021 - Sep. 2023</strong><br>Security Officer</p>
-            <ul>
-                <li>Officer at Target Field for MLB seasons and concerts, ensuring crowd control for 39,000 attendees.</li>
-            </ul>
-
-            <h3>Cobblestone Cafe</h3>
-            <p><strong>Jan. 2017 - May 2023</strong><br>Kitchen Supervisor</p>
-            <ul>
-                <li>Supervised a high-volume kitchen, managing orders with attention to detail and quality.</li>
-            </ul>
-
-            <h2><i class="fa-solid fa-graduation-cap"></i> EDUCATION</h2>
-            <p><strong>Saint Paul College</strong><br>Expected 2026<br>AAS in Computer Programming</p>
-            <p><strong>Prime Digital Academy</strong><br>2024<br>Full-stack software development</p>
-
-            <h2><i class="fa-solid fa-laptop-code"></i> SKILLS</h2>
-            <ul>
-                <li>Languages: Working knowledge of HTML, CSS, JavaScript, SQL, Python, C, C#, and Java</li>
-                <li>Technologies: Hands-on experience with React, Node.js, Express, Axios, Redux, PostgreSQL, Material UI,
-                    Stripe, Passport, AWS, Heroku, Cloudflare, Render, .NET Framework</li>
-                <li>Software Development Lifecycle: Scoping, development, testing, and deployment</li>
-            </ul>
         </div>
     </main>
 
-<footer>
-    <div class="footer-upper py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h5>CSCI1450 Final Project</h5>
-                    <p>
-                        This is a portfolio website made for my final CSCI1450 assignment.
-                        The images are royalty-free photos from pixabay.com.
-                    </p>
-                </div>
-                <div class="col-sm-6">
-                    <h5>Connect with me!</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.linkedin.com/in/jakeburoker/" class="text-light"><i
-                                    class="fa-brands fa-linkedin"></i> Linkedin</a></li>
-                        <li><a href="https://github.com/JakeBuroker" class="text-light"><i
-                                    class="fa-brands fa-github"></i> Github</a></li>
-                        <li><a href="mailto:jaketburoker@gmail.com" class="text-light"><i
-                                    class="fa-solid fa-envelope"></i> Email</a></li>
-                    </ul>
+    <!--footer-->
+    <footer>
+        <div class="footer-upper py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>CSCI1450 Final Project</h5>
+                        <p>This is a portfolio website made for my final CSCI1450 assignment. The images are royalty-free photos from pixabay.com.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5>Connect with me!</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.linkedin.com/in/jakeburoker/" class="text-light"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+                            <li><a href="https://github.com/JakeBuroker" class="text-light"><i class="fa-brands fa-github"></i> Github</a></li>
+                            <li><a href="mailto:jaketburoker@gmail.com" class="text-light"><i class="fa-solid fa-envelope"></i> Email</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-lower text-center py-2">
-        <small>&copy; Jake Buroker</small>
-    </div>
-</footer>
+        <div class="footer-lower text-center py-2">
+            <small>&copy; Jake Buroker</small>
+        </div>
+    </footer>
 
-<!--jQuery, Popper, and Bootstrap Javascript files-->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!--jQuery, Popper, and Bootstrap Javascript files-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 
 </html>
