@@ -1,51 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
-  margin: 0;
+  background-color: #f4f4f9;
   color: black;
-  background-color: white;
-}
-
-/* Website Links except the nav */
-
-h1 {
-  background-color: white;
-  font-size: 3em;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
-}
-
-a:link {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  color: #bb8243;
-}
-
-a:active {
-  color: #bb8243;
 }
 
 header {
   text-align: center;
-
   width: 100%;
   height: auto;
-  /* Adjust height if needed */
-
   background-color: #2a2d34;
 }
 
+.logo {
+  margin: 0 auto;
+  display: block;
+}
+
 nav {
-  
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   padding: 5px;
@@ -69,47 +47,76 @@ nav a {
   text-decoration: none;
 }
 
-nav a:link {
+nav a:link, nav a:visited {
   color: rgb(189, 189, 189);
 }
 
-nav a:visited {
-  color: rgb(189, 189, 189);
-}
-
-nav a:hover {
+nav a:hover, nav a:active {
   color: #bb8243;
-  ;
-}
-
-nav a:active {
-  color: #bb8243;
-}
-
-.logo {
-  margin: 0 auto;
-  display: block;
 }
 
 main {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 20px auto;
   padding: 10px;
-
 }
 
-.code {
-  max-width: 40%;
-  float: left;
-  height: 205px;
-  margin: 0 40px 20px 0;
-  border: black 2px solid;
+.resume-container {
+  background-color: #fff;
+  width: 8.5in;
+  min-height: 11in;
+  padding: 40px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #2a2d34;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+strong {
+  color: #2a2d34;
+}
+
+hr {
+  border: 1px solid #bbb;
+  margin: 20px 0;
 }
 
 footer {
   border-top: black 3px solid;
   text-align: center;
-
 }
 
 footer .footer-upper,
@@ -154,15 +161,11 @@ footer .footer-upper a:hover {
 
 iframe {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 1027.5px;
 }
 
 /*CSS without a media query--applies to all sizes unless overridden*/
-h1 {
-  font-size: 4em;
-}
-
 #home-hero {
-
   width: 100%;
 }
 
@@ -175,33 +178,69 @@ h1 {
   margin: 0 0 10px 0;
   padding: 50px;
   background-image: url('images/banner.jpg');
-
 }
+
+.code {
+  max-width: 40%;
+  float: left;
+  height: 205px;
+  margin: 0 40px 20px 0;
+  border: black 2px solid;
+}
+
+
 
 /* JavaScript Game changes for mobile */
-.mobile{
-	display:none;
-}
-@media only screen and (max-width: 768px){
-	.desktop{
-		display:none;
-	}
-	.mobile{
-		display: block;
-		touch-action: manipulation;
-	}
+.mobile {
+  display: none;
+  
 }
 
-/* CSS Adjustments for Tablets */
+@media only screen and (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    touch-action: manipulation;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   h1 {
     font-size: 1.8em;
   }
 }
 
-/* CSS Adjustments for Smartphones */
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 1.5em;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: #fff;
+  }
+
+  .resume-container {
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  nav, footer {
+    display: none;
+  }
+
+  header {
+    display: none;
+  }
+
+  .resume-container {
+    page-break-before: always;
+    page-break-after: always;
   }
 }

@@ -3,17 +3,147 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, mininum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta name="description" content="This is the resume page of Jake Buroker.">
     <title>Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
 
+        header {
+            text-align: center;
+            background-color: #2a2d34;
+        }
+
+        .logo {
+            margin: 0 auto;
+            display: block;
+            width: auto;
+        }
+
+        nav {
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+            padding: 5px;
+            font-family: 'Impact';
+            background-color: #2a2d34;
+        }
+
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline;
+            padding: 5px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(189, 189, 189);
+        }
+
+        nav a:hover {
+            color: #bb8243;
+        }
+
+        .resume-container {
+            background-color: #fff;
+            width: 8.5in;
+            min-height: 11in;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .resume-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .resume-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #bb8243;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .resume-buttons a:hover {
+            background-color: #e09b56;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #bb8243;
+            margin-bottom: 10px;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            color: #2a2d34;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            border-top: black 3px solid;
+            background-color: #2a2d34;
+            color: #f5f5f5;
+        }
+
+        @media print {
+            nav, footer, header {
+                display: none;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                border: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
     <header>
         <img src="images/logo.png" alt="logo" class="img-fluid logo">
     </header>
@@ -26,101 +156,100 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
     <main>
-        <h1>Jake Buroker</h1>
-        <p>Email: JakeTBuroker@gmail.com ❖ Phone: (651) 328-9798 ❖ </p>
+        <div class="resume-container">
+            <h1>Jake Buroker</h1>
+            <p class="contact-info">
+                📧 <a href="mailto:JakeTBuroker@gmail.com" onclick="alert('You can email me at JakeTBuroker@gmail.com!')">JakeTBuroker@gmail.com</a> 
+                ❖ 
+                📞 <a href="tel:+16513289798" onclick="alert('You can call or text me at (651) 328-9798!')">(651) 328-9798</a> 
+                ❖ 
+                <a href="https://github.com/JakeBuroker" target="_blank">GitHub</a>
+            </p>
 
-        <hr>
+            <div class="resume-buttons">
+                <a href="images/Resume.pdf" class="btn-download"><i class="fa-solid fa-download"></i> Download PDF</a>
+            </div>
 
-        <h2>EXPERIENCE</h2>
+            <h2><i class="fa-solid fa-briefcase"></i> EXPERIENCE</h2>
 
-        <h3>Allied Universal/American Security LLC</h3>
-        <p><b>May 2021 - Sep. 2023</b><br>Security Officer<br>Minneapolis, MN</p>
-        <ul>
-            <li>Officer with the Twins at Target Field for three MLB seasons, handling high-profile sports events and
-                concerts.
-            </li>
-            <li>Worked in a team of 20, ensuring crowd control and safety for up to 39,000 attendees per event.</li>
-            <li>Implemented security protocols, including entry checks, bag searches, and coordination with law
-                enforcement.
-            </li>
-            <li>Provided security services at other locations like various office buildings, hospitals/clinics, and
-                Capella
-                Tower.</li>
-        </ul>
+            <h3>TRACES</h3>
+            <p><strong>July 2024 - Nov. 2024</strong><br>Software Engineer<br><a href="https://traces.website" target="_blank">Traces.Website</a></p>
+            <ul>
+                <li>Developed an evidence management mobile web app for an immersive play with The Walker Art Center.</li>
+                <li>Took a leadership role managing the repository and overseeing all DevOps tasks using Heroku, AWS,
+                    Render, and Cloudflare for security and custom domain deployment.</li>
+            </ul>
 
-        <h3>Cobblestone Cafe</h3>
-        <p><b>Jan. 2017 - May. 2023</b><br>Kitchen Supervisor<br>White Bear Lake, MN</p>
-        <ul>
-            <li>Supervised a high-volume kitchen, managing simultaneous orders with attention to detail and quality.
-            </li>
-            <li>Navigated challenging situations, like equipment failures and staff shortages.</li>
-        </ul>
+            <h3>Prime Digital Academy</h3>
+            <p><strong>Oct. 2023 - Mar. 2024</strong><br>Software Engineering Student</p>
+            <ul>
+                <li>Developed a pick-up order placer for my mom’s restaurant that allows customers to place pick-up orders,
+                    view order history, and provides admins with tools to manage and analyze orders</li>
+            </ul>
 
-        <hr>
+            <h3>Allied Universal/American Security LLC</h3>
+            <p><strong>May 2021 - Sep. 2023</strong><br>Security Officer</p>
+            <ul>
+                <li>Officer at Target Field for MLB seasons and concerts, ensuring crowd control for 39,000 attendees.</li>
+            </ul>
 
-        <h2>EDUCATION</h2>
-        <p><b>Prime Digital Academy</b><br>Oct. 2023 - Mar. 2024<br>Minneapolis, MN<br>Full-time, on-campus, accelerated
-            learning program focused on full-stack software development.</p>
+            <h3>Cobblestone Cafe</h3>
+            <p><strong>Jan. 2017 - May 2023</strong><br>Kitchen Supervisor</p>
+            <ul>
+                <li>Supervised a high-volume kitchen, managing orders with attention to detail and quality.</li>
+            </ul>
 
-        <hr>
+            <h2><i class="fa-solid fa-graduation-cap"></i> EDUCATION</h2>
+            <p><strong>Saint Paul College</strong><br>Expected 2026<br>AAS in Computer Programming</p>
+            <p><strong>Prime Digital Academy</strong><br>2024<br>Full-stack software development</p>
 
-        <h2>SKILLS & CERTIFICATIONS</h2>
-        <ul>
-            <li><b>Software Development Lifecycle:</b> Experienced in planning, design, development, testing, and
-                deployment.
-            </li>
-            <li><b>Leadership and Team Supervision:</b> Demonstrated ability to lead and supervise teams in various
-                settings.
-            </li>
-            <li><b>Problem-Solving and Adaptability:</b> Effective in identifying solutions in dynamic environments and
-                adapting.</li>
-            <li><b>Multitasking:</b> Experience handling multiple tasks simultaneously without compromising quality or
-                efficiency.</li>
-            <li><b>Teamwork and Collaboration:</b> Proven record of working effectively in team settings across
-                different roles.
-            </li>
-        </ul>
-
-        <p><b>CPR/AED Certification (2023-2025)</b></p>
-        <p><b>Full-Stack Accelerated Learning Certificate (2024)</b></p>
+            <h2><i class="fa-solid fa-laptop-code"></i> SKILLS</h2>
+            <ul>
+                <li>Languages: Working knowledge of HTML, CSS, JavaScript, SQL, Python, C, C#, and Java</li>
+                <li>Technologies: Hands-on experience with React, Node.js, Express, Axios, Redux, PostgreSQL, Material UI,
+                    Stripe, Passport, AWS, Heroku, Cloudflare, Render, .NET Framework</li>
+                <li>Software Development Lifecycle: Scoping, development, testing, and deployment</li>
+            </ul>
+        </div>
     </main>
 
-    <footer>
-        <div class="footer-upper py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h5>CSCI1450 Final Project</h5>
-                        <p>
-                            This is a portfolio website made for my final CSCI1450 assignment.
-                            The images are royalty-free photos from pixabay.com.
-                        </p>
-                    </div>
-                    <div class="col-sm-6">
-                        <h5>Connect with me!</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="https://www.linkedin.com/in/jakeburoker/" class="text-light"><i
-                                        class="fa-brands fa-linkedin"></i> Linkedin</a></li>
-                            <li><a href="https://github.com/JakeBuroker" class="text-light"><i
-                                        class="fa-brands fa-github"></i> Github</a></li>
-                            <li><a href="mailto:jaketburoker@gmail.com" class="text-light"><i
-                                        class="fa-solid fa-envelope"></i> Email</a></li>
-                        </ul>
-                    </div>
+<footer>
+    <div class="footer-upper py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5>CSCI1450 Final Project</h5>
+                    <p>
+                        This is a portfolio website made for my final CSCI1450 assignment.
+                        The images are royalty-free photos from pixabay.com.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <h5>Connect with me!</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.linkedin.com/in/jakeburoker/" class="text-light"><i
+                                    class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+                        <li><a href="https://github.com/JakeBuroker" class="text-light"><i
+                                    class="fa-brands fa-github"></i> Github</a></li>
+                        <li><a href="mailto:jaketburoker@gmail.com" class="text-light"><i
+                                    class="fa-solid fa-envelope"></i> Email</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="footer-lower text-center py-2">
-            <small>&copy; Jake Buroker</small>
-        </div>
-    </footer>
+    <div class="footer-lower text-center py-2">
+        <small>&copy; Jake Buroker</small>
+    </div>
+</footer>
 
-    <!--jQuery, Popper, and Bootstrap Javascript files-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<!--jQuery, Popper, and Bootstrap Javascript files-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
